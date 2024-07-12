@@ -84,9 +84,11 @@ HeatRate = userInput( 'Enter heating rate, deg C per hour, 11 to 28:  ', 11, 28)
 SoakTime = userInput( 'Enter the soak time before starting ramp down, minutes [6 to 999]:  ', 6, 999)
 CoolRate = userInput( 'Enter the cooling rate, deg C per hour, (6 - 28):  ', 6, 28)
 # was 21, need to think about this
-Ambient = 27
+Ambient = userInput('Enter the ambient temperature, deg C: ', -30, 100)
 # future thoughts, could read bed temp and assume it is at ambient
 # Can gcode do math & code? I don't think so
+# Gcode doesn't seem capable, so figure to ask the user
+# (bed temp sensor, chamber sensor or whatever to find it)
 
 # Compute times based on user input
 # How long in seconds between changes in target temperature
